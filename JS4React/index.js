@@ -43,7 +43,7 @@ console.log(suma(2,3));
 
 
 //Trabajo con Arreglos
-const nombres= ['Alan', 'Isa', 'Pablo', 'Juan Pablo']
+/*const nombres= ['Alan', 'Isa', 'Pablo', 'Juan Pablo']
 
 for (let i =0 ; i< nombres.length; i++){
     const elemento= nombres  [i]
@@ -55,6 +55,7 @@ for (let i =0 ; i< nombres.length; i++){
 nombres.forEach(function (nombre){
     console.log(nombre)
 })
+*/
 
 /*
 const array2= nombres.map(function (nombre){
@@ -104,3 +105,41 @@ console.log(array2)
 
 //console.log(calc.suma(45,54))
 //console.log(calc.resta(45,54))
+
+/*const ul= document.createElement('ul')
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+.then(function(response){
+    console.log("Carga de datos completada")
+    return response.json()
+}).then(function(data){
+    console.log(data)
+    data.forEach(function (post){
+        const li = document.createElement('li')
+        li.innerHTML=post.title
+        ul.append(li)
+    })
+    document.body.append(ul)
+})
+
+console.log('Cargando HTML')
+console.log('Cargando CSS')
+console.log('Cargando IMAGENES')
+
+console.log(datos)
+*/
+
+//EJEMPLO CON ASYNC AWAINT
+
+async function cargarDatos() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const datos = await response.json();
+    console.log(datos);
+}
+
+cargarDatos();
+
+console.log('Cargando HTML');
+console.log('carga CSS');
+console.log('Carga imagenes');
+
